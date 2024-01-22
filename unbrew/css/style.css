@@ -1,0 +1,349 @@
+:root{
+
+--text-light:white;
+--bg-count:#f7f8fa;
+--about-h:#414c64;
+--about-p:#848484;
+--header:#444444;
+--contact-p:#aab3c7;
+--footer-link:#414c64;
+--p:#777777;
+
+--footr-copy:#f4f5f8;
+--icon:#5f6f92;
+--bg-icon:#e1e4ec;
+--service-bg:#f5f5f5;
+--price-bg:#f8f8f8;
+--light:white;
+--dark:black;
+--theam:#fab700;
+--team-p:#aaaaaa;
+--team-overlay:#ffffffc3;
+--priceing-btn:#6c7c9f;
+--priceing-border:#c8cedc;
+--priceing-btn-2:#ffbb2c;
+--question-p:#aab3c7;
+--question-color:#ffc107;
+--form:#e1e4ec;
+
+--header-bg:#343a40;
+--header--text: rgb(255 255 255 / 60%);
+--header-hover:#7cbd1e;
+--header-contact-inner:#adb5bd;
+
+--service:#669c19;
+--testi-p:#b3b3b3;
+--testimo-bg:#f8f9fa;
+--footer-bg:#393e46;
+--footer-a:#ffffffb3;
+--footer-right:#ffffff66;
+--text-hover:#ffc107 !important;
+
+--banner:#553be6;
+--normal:#000000;
+--fff:#fff;
+--banner-p:#ffffffcc;
+--nava:#ffffffe6;
+--banner-btn:#1fb6fc;
+--service-icon-bg:#eff2ff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+ul li{
+    list-style-type: none;
+}
+p{
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    font-family: "Roboto", Arial, sans-serif;
+
+}
+.space{
+    padding: 90px 0px;
+}
+.img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.border {
+    border: 1px solid #dee2e6 !important;
+}
+/* header  */
+
+/* xs */
+@media (max-width:575px){
+    header .nav-main{
+        background-color: var(--header ) !important;
+        margin-top: 15px;
+    }
+    header .nav-main li{
+        margin-left: 15px;
+    }
+}
+/* sm  */
+@media (min-width:576px){
+    header .nav-main{
+        background-color: var(--header ) !important;
+        margin-top: 15px;
+    }
+    header .nav-main li{
+        margin-left: 15px;
+    }
+}
+/* lg  */
+@media (min-width:992px){
+    header .nav-main{
+        background-color: transparent !important;
+        margin-top: 0;
+    }
+    header .nav-main li{
+        margin-left: 0px;
+    }
+}
+header ul li a{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+.navbar-toggler{
+    color: var(--light);
+}
+.navbar-toggler-icon i{
+    color: var(--text-light) !important;
+}
+header{
+    width: 100%;
+    z-index: 9;
+    top: 10px;
+}
+nav ul .dropdown .dropdownmenu ul li{
+    width: 100%;
+}
+
+.home{
+    border-bottom: 2px solid var(--text-light);
+    
+}
+.outernav{
+    transition: all 0.3s linear;
+    position: relative;
+    transition: all 0.3s linear;
+    color: var(--nava) !important;
+}
+.outernav::after{
+    content: '';
+    position: absolute;
+    top: 38px;
+    left: 25px;
+    height: 2px;
+    width: 2px;
+    visibility: hidden;
+    background-color: var(--text-light);
+    transition: all 0.3s linear;
+    transform-origin: center;
+
+}
+.outernav:hover::after{
+    visibility: visible;
+    transform-origin: center;
+    width: 100%;
+    left: 0px;
+    transform: scalex(1.1);
+}
+
+
+
+/* banner  */
+.banner{
+    width: 100%;
+    height: 800px;
+    position: relative;
+    background: linear-gradient(45deg, #553be6 0%, #a87ffa 100%);
+    overflow: hidden;
+    z-index: 0;
+}
+.banner::after{
+    position: absolute;
+    bottom: -90px;
+    left: 0;
+    width: 40%;
+    height: 180px;
+    content: '';
+    background: var(--normal);
+    z-index: -1;
+    opacity: .05;
+    border-radius: 0 50% 50% 0;
+}
+.banner::before{
+    position: absolute;
+    top: -150px;
+    left: -200px;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    content: '';
+    background: var(--fff);
+    z-index: -1;
+    opacity: .05;
+}
+.banner-inner-1{
+    z-index: 9;
+}
+.bannerp{
+    color: var(--banner-p) !important;
+}
+.banner-btn{
+    background: var(--banner-btn) !important;
+    border: 1px solid var(--banner-btn) !important;
+    color: var(--fff) !important;
+    border-radius: 40px 40px 40px 0;
+    transition: all 0.3s linear;
+}
+.banner-btn:hover{
+    border-radius: 0 40px 40px 40px;
+}
+.banner-btn .call{
+    font-size: 12px;
+
+}
+.banner-btn .phone{
+    font-size: 14px;
+}
+.banner-icon{
+    position: absolute;
+    bottom: 70px;
+    padding: 0;
+}
+.banner-icon a{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+}
+.banner-icon a:hover{
+    background-color: var(--banner-btn);
+}
+
+
+/* services  */
+.services-details h6{
+    font-size: 12px;
+    color: var(--banner-btn);
+}
+.services-icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--service-icon-bg) !important;
+    transition: all 0.3s linear;
+}
+.services-icon{
+    background-color: var(--text-light);
+}
+.services-icon img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.service-p{
+    color: var(--about-p) !important;
+}
+.services-a:hover .service-p{
+    color: var(--text-light) !important;
+}
+.services-a{
+    z-index: 0;
+    transition: all 0.3s linear;
+}
+.services-a::after{
+    position: absolute;
+    bottom: -100%;
+    right: -15%;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(-50%);
+    transform: rotate(50deg);
+    transition: all 0.5s ease;
+}
+.services-a:hover::after{
+  
+    bottom: -70%;
+    right: 0;
+    opacity: 1;
+}
+.services-a:hover{
+    background-color: var(--banner-btn);
+    color: var(--text-light);
+}
+
+/* count  */
+.count-img {
+    background-image: url('../images/c1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+}
+.count-img::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: #2a3a60;
+    opacity: .5;
+}
+
+.count-i{
+    width: 25%;
+    
+}
+.count-inner h2{
+    color: var(--banner-btn);
+}
+
+
+/* backtotop */
+.backtotop{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    color: var(--light);
+    border-radius: 10px;
+    background-color: var(--theam);
+}
+.backtotop:hover a{
+    color: var(--bg-icon);
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 30px;
+    background-color: var(--theam);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--light);
+    border-radius: 30px;
+}
