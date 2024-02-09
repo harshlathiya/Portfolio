@@ -96,6 +96,9 @@ header .nav-main li{
 header .nav-main li{
 	margin-left: 15px;
 }
+.pro12img{
+	width: 549px !important;
+}
 }
 
 /*MD*/
@@ -120,7 +123,9 @@ header .nav-main li{
 	width: 20%;
 }
 
-
+.pro12img{
+	width: 497px !important;
+}
 /* projectcontent */
 .projectcontent{
 	margin-top: 40px;
@@ -192,6 +197,9 @@ header .nav-main li{
 header .nav-main li{
 	margin-left: 0px;
 }
+.pro12img{
+	width: 721px !important;
+}
 }
 
 
@@ -215,6 +223,9 @@ header .nav-main li{
 	}
 	.w-xl-5{
 		width: 20%;
+	}
+	.pro12img{
+		width: 882px !important;
 	}
 }
 
