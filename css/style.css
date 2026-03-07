@@ -48,6 +48,24 @@
 	--service-icon-bg:#eff2ff;
 	}
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: #eee;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background: palevioletred;
+	border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #c45d7a;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -57,6 +75,8 @@ html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
+	scrollbar-width: thin;
+	scrollbar-color: palevioletred #eee;
 }
 a {
 	text-decoration: none;
@@ -829,48 +849,98 @@ a{
 	.skill-tag { font-size: 1.15rem; padding: 0.7rem 1.4rem; }
 }
 
-/* contact Section */
-#contact .contact {
-	flex-direction: column;
-	max-width: 1200px;
+/* Contact Section */
+#contact {
+	background: #fff;
+	padding: 5rem 1.5rem;
+}
+.contact-container {
+	max-width: 1000px;
 	margin: 0 auto;
-}
-#contact .contact-items {
-	width: 400px;
-}
-#contact .contact-item {
-	width: 80%;
-	padding: 20px;
 	text-align: center;
-	border-radius: 10px;
-	padding: 30px;
-	margin: 30px;
+}
+#contact .section-title {
+	margin-bottom: 0.75rem;
+}
+.contact-intro {
+	font-size: 1.25rem;
+	color: #555;
+	margin-bottom: 2.5rem;
+	line-height: 1.5;
+}
+.contact-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+.contact-card {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
-	box-shadow: 0px 0px 18px 0 #0000002c;
-	transition: .3s ease box-shadow;
+	align-items: center;
+	justify-content: flex-start;
+	text-align: center;
+	padding: 2rem 1.5rem;
+	background: #fafafa;
+	border: 1px solid #eee;
+	border-radius: 12px;
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.25s ease;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
-#contact .contact-item:hover {
-	box-shadow: 0px 0px 5px 0 #0000002c;
+.contact-card:hover {
+	background: #fff;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+	border-color: rgba(219, 112, 147, 0.35);
+	transform: translateY(-3px);
 }
-#contact .icon {
-	width: 70px;
-	margin: 0 auto;
-	margin-bottom: 10px;
+.contact-card-icon {
+	width: 52px;
+	height: 52px;
+	line-height: 52px;
+	margin: 0 auto 1rem;
+	text-align: center;
+	background: rgba(219, 112, 147, 0.12);
+	color: palevioletred;
+	border-radius: 12px;
+	font-size: 1.5rem;
+	flex-shrink: 0;
 }
-#contact .contact-info h1 {
-	font-size: 2.5rem;
-	font-weight: 500;
-	margin-bottom: 5px;
+.contact-card-icon i {
+	display: inline-block;
+	font-size: inherit;
+	line-height: 1;
+	vertical-align: middle;
 }
-#contact .contact-info h2 {
-	font-size: 1.3rem;
-	line-height: 2rem;
-	font-weight: 500;
+.contact-card h3 {
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 0.5rem;
 }
-/*End contact Section */
+.contact-value {
+	font-size: 1.05rem;
+	color: #555;
+	line-height: 1.6;
+	display: block;
+}
+.contact-card a.contact-value {
+	color: palevioletred;
+	text-decoration: none;
+}
+.contact-card a.contact-value:hover {
+	text-decoration: underline;
+}
+@media (min-width: 768px) {
+	.contact-grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.75rem;
+	}
+	.contact-card { padding: 2rem; }
+	.contact-card h3 { font-size: 1.25rem; }
+	.contact-value { font-size: 1.1rem; }
+}
+/* End Contact Section */
 
 /* Footer */
 #footer {
@@ -1013,39 +1083,6 @@ a{
 	}
 	/* End About */
 
-	/* contact  */
-	#contact .contact {
-		flex-direction: column;
-		padding: 100px 0;
-		align-items: center;
-		justify-content: center;
-		min-width: 20vh;
-	}
-	#contact .contact-items {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-		margin: 0;
-	}
-	#contact .contact-item {
-		width: 30%;
-		margin: 0;
-		flex-direction: row;
-	}
-	#contact .contact-item .icon {
-		height: 100px;
-		width: 100px;
-	}
-	#contact .contact-item .icon img {
-		object-fit: contain;
-	}
-	#contact .contact-item .contact-info {
-		width: 100%;
-		text-align: left;
-		padding-left: 20px;
-	}
-	/* End contact  */
 }
 /* End Media Query For Tablet */
 
