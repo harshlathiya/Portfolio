@@ -654,6 +654,39 @@ a{
 #hero h1:nth-child(3) span {
 	animation-delay: 2.5s;
 }
+.hero-tagline {
+	font-size: 1.2rem;
+	color: rgba(255,255,255,0.9);
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+	letter-spacing: 0.02em;
+}
+.hero-cta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 0.5rem;
+}
+.cta-primary {
+	background-color: palevioletred;
+	border-color: palevioletred;
+	color: white !important;
+}
+.cta-primary:hover {
+	background-color: #c45d7a !important;
+	border-color: #c45d7a;
+	color: white !important;
+}
+.cta-secondary {
+	background-color: transparent;
+	color: white !important;
+	border-color: rgba(255,255,255,0.8);
+}
+.cta-secondary:hover {
+	background-color: rgba(255,255,255,0.15);
+	color: white !important;
+	border-color: white;
+}
 
 /* End Hero Section */
 /* about section image css */
