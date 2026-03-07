@@ -385,28 +385,25 @@
     </div>
   </section>
   <!-- End Projects Section -->
-  <section class="filter-section" id="portfolio" aria-labelledby="portfolio-heading">
-    <div class="projects-header">
-      <h2 id="portfolio-heading" class="section-title pt-5"> <span>Portfolio</span></h2>
-    </div>
-    <!-- Filter Controls !-->
-    <div class="controls">
-      <ul id="filters" class="clearfix">
-        <li class="filter active fs-2 text-black" data-filter="all">All</li>
-        <li class="filter  fs-2 text-black" data-filter=".node">Node.js</li>
-        <li class="filter fs-2 text-black" data-filter=".sass">Sass</li>
-        <li class="filter fs-2 text-black" data-filter=".bootstrap">Bootstrap</li>
-        <li class="filter fs-2 text-black" data-filter=".css">CSS</li>
-        <li class="filter fs-2 text-black" data-filter=".media">Media</li>
-        <li class="filter fs-2 text-black" data-filter=".jquery">jQuery</li>
-        <li class="filter fs-2 text-black" data-filter=".html">HTML</li>
-        <li class="filter fs-2 text-black" data-filter=".wordpress">WordPress</li>
-        <li class="filter fs-2 text-black" data-filter=".photoshop">Photoshop</li>
-      </ul>
-    </div>
-
-    <!-- Filter Grid !-->
-    <div class="item-grid">
+  <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-heading">
+    <div class="portfolio-wrap">
+      <h2 id="portfolio-heading" class="section-title">Port<span>folio</span></h2>
+      <p class="portfolio-intro">Filter by technology to browse web apps, sites, and design work.</p>
+      <nav class="portfolio-filters" aria-label="Filter portfolio by technology">
+        <ul id="filters" class="filter-list">
+          <li><button type="button" class="filter active" data-filter="all">All</button></li>
+          <li><button type="button" class="filter" data-filter=".node">Node.js</button></li>
+          <li><button type="button" class="filter" data-filter=".sass">Sass</button></li>
+          <li><button type="button" class="filter" data-filter=".bootstrap">Bootstrap</button></li>
+          <li><button type="button" class="filter" data-filter=".css">CSS</button></li>
+          <li><button type="button" class="filter" data-filter=".media">Media</button></li>
+          <li><button type="button" class="filter" data-filter=".jquery">jQuery</button></li>
+          <li><button type="button" class="filter" data-filter=".html">HTML</button></li>
+          <li><button type="button" class="filter" data-filter=".wordpress">WordPress</button></li>
+          <li><button type="button" class="filter" data-filter=".photoshop">Photoshop</button></li>
+        </ul>
+      </nav>
+      <div class="item-grid">
       <div class="item node" data-cat="node">
         <a target="_blank" href="https://github.com/lathiyaharsh/Leave_management" rel="noopener noreferrer" title="Leave Management – View on GitHub"><img src="images/leave_mang.png" alt="Leave Management System – Node.js" width="100%"></a>
       </div>
@@ -508,11 +505,8 @@
       <div class="item wordpress" data-cat="wordpress">
         <a href="images/wordpree.png"><img src="images/wordpree.png" alt="wordpress" width="100%"></a>
       </div>
-
-
-
+      </div>
     </div>
-
   </section>
   <!-- Service Section -->
   <section id="services" aria-labelledby="services-heading">
@@ -624,31 +618,44 @@
   <script src="js/jquery.mixitup.min.js"></script>
   <script src="js/wow.min.js"></script>
 
-
-
-  <!-- Portfolio -->
+  <!-- Portfolio filter (MixItUp) -->
   <script>
-    // Don't forget the CDNjs!
-
     $(function () {
-      var filterList = {
-        init: function () {
-          // MixItUp plugin
-          // http://mixitup.io
-          $('.item-grid').mixItUp({
-            selectors: {
-              target: '.item',
-              filter: '.filter'
-            },
-            load: {
-              filter: 'all' // show app tab on first load
+      var $grid = $('.item-grid');
+      var gridEl = $grid[0];
+      $grid.mixItUp({
+        selectors: {
+          target: '.item',
+          filter: '.filter'
+        },
+        load: {
+          filter: 'all'
+        },
+        animation: {
+          enable: true,
+          duration: 400,
+          effects: 'fade scale',
+          easing: 'ease'
+        },
+        layout: {
+          display: 'block'
+        },
+        animateResizeContainer: false,
+        animateResizeTargets: false,
+        callbacks: {
+          onMixStart: function (state) {
+            state.$show.css('display', 'block');
+            if (gridEl && gridEl.offsetParent) {
+              void gridEl.offsetHeight;
             }
-          });
+          },
+          onMixEnd: function (state) {
+            state.$hide.css('display', 'none');
+            state.$show.css('display', 'block');
+          }
         }
-      };
-      // Run the show!
-      filterList.init();
-    });	
+      });
+    });
   </script>
   <!-- progress bar  -->
   <script>
